@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Clean the environment
+module purge
+
+# Set working directory to home directory
+cd "${HOME}"
+
+#xfce
+source "<%= session.staged_root.join("desktops", "#{context.desktop}.sh") %>" 
+#
+# Start program
+#
+
+module load mgltools/<%= context.pom_mgltools_versions %>
+module load autodock_vina/<%= context.pom_autodock_vina_versions %>
+
+  module list
+set -x
+pmv
